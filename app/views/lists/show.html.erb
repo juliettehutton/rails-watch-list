@@ -7,7 +7,16 @@
 <ol>
   <% @list.bookmarks.each do |bookmark| %>
     <li>
-      <%= bookmark.comment %>
+      <%= bookmark.comment %> <%= link_to "🗑️", bookmark_path,
+      data: {turbo_method: :delete, turbo_confirm: "Do you really want to delete this bookmark?"} %>
     </li>
   <% end %>
 </ol>
+
+<div>
+  <%= link_to "Create a new bookmark", new_list_bookmark_path(@list) %>
+</div>
+
+<div>
+  <%= link_to "Back to lists", lists_path %>
+</div>
