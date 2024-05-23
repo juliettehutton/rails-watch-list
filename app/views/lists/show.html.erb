@@ -1,3 +1,13 @@
 <h1>List n°<%= @list.id %></h1>
 
 <p>Name: <%= @list.name %></p>
+
+<%# add a bookmark %>
+
+<ol>
+  <% @list.bookmarks.each do |bookmark| %>
+    <li>
+      <%= bookmark.comment %>
+    </li>
+  <% end %>
+</ol>
